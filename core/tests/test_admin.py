@@ -28,7 +28,7 @@ class AdminSiteTests(TestCase):
                                               created_at=datetime.datetime.now())
         self.buy_transaction.save()
         self.sell_transaction = BuyTransaction(owner=self.user, instrument=self.instrument, quantity=5,
-                                              created_at=datetime.datetime.now())
+                                               created_at=datetime.datetime.now())
         self.sell_transaction.save()
 
     def test_users_listed(self):
@@ -83,4 +83,3 @@ class AdminSiteTests(TestCase):
         response = self.client.get(url)
 
         self.assertContains(response, self.sell_transaction.instrument)
-        self.assertContains(response, self.sell_transaction.quantity)
