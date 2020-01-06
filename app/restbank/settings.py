@@ -142,31 +142,31 @@ DATETIME_INPUT_FORMATS += ('%Y-%m-%d %H:%M %p',)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Fri, 31 Dec 2055 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-    
-}
-
-AWS_STORAGE_BUCKET_NAME = 'restbank'
-AWS_S3_REGION_NAME = 'eu-west-1'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")                         ## hidden
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")                 ## hidden
-
-
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME  
-
-
-STATICFILES_LOCATION = 'static'                                                 ## comment out for testing
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'                           ## comment out for testing
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'Expires': 'Fri, 31 Dec 2055 20:00:00 GMT',
+#     'CacheControl': 'max-age=94608000',
+#
+# }
+#
+# AWS_STORAGE_BUCKET_NAME = 'restbank'
+# AWS_S3_REGION_NAME = 'eu-west-1'
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")                         ## hidden
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")                 ## hidden
+#
+#
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#
+#
+# STATICFILES_LOCATION = 'static'                                                 ## comment out for testing
+# STATICFILES_STORAGE = 'custom_storages.StaticStorage'                           ## comment out for testing
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     )
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Get User model
 AUTH_USER_MODEL = 'core.User'
